@@ -11,7 +11,7 @@ CREATE TABLE [dwo].[DW_Inconsistencias](
 
 	[Proceso_Key] [integer] NOT NULL,
 	[Fecha] [datetime] NULL,
-	[Paso] [varchar](50) NULL,
+	[Paso] [varchar](100) NULL,
 	[Inconsistencia] [varchar](MAX) NULL
   CONSTRAINT [PK_DW_Lotes] PRIMARY KEY CLUSTERED
   (

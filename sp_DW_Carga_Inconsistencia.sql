@@ -52,5 +52,5 @@ DECLARE @packageName varchar(100) = ?  -- Not use for the moment.
 DECLARE @Error varchar(max) = ?
 
 -- if task name not in this specific names even @TaskName execute SP.
-IF @TaskName NOT IN ('CUENTA_PROCESOS','SELECCIONA PROCESO','ACTUALIZA DW_PROCESO','FIN DW_PROCESO', @TaskName)
+IF @TaskName NOT IN ('CUENTA_PROCESOS','SELECCIONA PROCESO','ACTUALIZA DW_PROCESO','FIN DW_PROCESO', @packageName)
 EXEC [dwo].[sp_DW_Carga_Inconsistencia]@nProcesoKey, @taskName, @Error
