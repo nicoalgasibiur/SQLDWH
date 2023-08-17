@@ -50,3 +50,27 @@ DECLARE @packageName varchar(100) = ?  -- Not use for the moment.?
 -- if task name not in this specific names even @TaskName execute SP.
 IF @TaskName NOT IN ('CUENTA_PROCESOS','SELECCIONA PROCESO','ACTUALIZA DW_PROCESO','FIN DW_PROCESO', @packageName)
 EXEC [dwo].[sp_DW_Carga_Controles]@nProcesoKey, @taskName,'Inicio'
+
+
+
+
+
+-- SSIS - EVENT HANDLER - OnPostExecute
+
+-- SQL Task:
+-- Task Name: Registra Fin.
+
+-- Asignacion de parametros o parameter mapping: 
+	-- User: PROCESO.
+	-- System: SourceName.
+	-- System: PackageName.
+
+DECLARE @nProcesoKey BIGINT 
+SET @nProcesoKey = ?
+
+DECLARE @taskName varchar(100) = ?
+DECLARE @packageName varchar(100) = ?  -- Not use for the moment.
+
+-- if task name not in this specific names even @TaskName execute SP.
+IF @TaskName NOT IN ('CUENTA_PROCESOS','SELECCIONA PROCESO','ACTUALIZA DW_PROCESO','FIN DW_PROCESO', @packageName)
+EXEC [dwo].[sp_DW_Carga_Controles]@nProcesoKey, @taskName,'Fin'
