@@ -25,10 +25,10 @@ INSERT INTO [dwo].[DW_Lote](
 							 [Lote_Key], 
 							 [Lote]
 						    )
-VALUES  (1, 'PROYECTO A'),
-	    (1, 'PROYECTO B'),
-		(2, 'PROYECTO C'),
-		(6,'AREA A'),
-		(7, 'AREA B')
+VALUES  (1, 'PROYECTO Libreria'),
+	    (2, 'PROYECTO B'),
+		(3, 'PROYECTO C'),
+		(4,'AREA A'),
+		(5, 'AREA B')
 		
 							
